@@ -112,6 +112,13 @@ public class Console {
             }
 
             else if (choice == 2) {
+                System.out.println("Currently available property ID: ");
+                int manuLength = admin.properties.size();
+                for (int i = 0; i < manuLength; i++) {
+                    if (admin.properties.get(i).getIsAvailable()) {
+                        System.out.println(admin.properties.get(i).getPropertyId());
+                    }
+                }
                 String epid;
                 System.out.println("Enter property ID:");
                 epid = sc.nextLine();
@@ -213,7 +220,7 @@ public class Console {
                     DateTime rtnDate = currentTimeConvert(rtDate);
                     admin.properties.get(i).showLastRecord().setRtnDate(rtnDate);
                     double feeRate = admin.properties.get(i).getDailyRental();
-                    double lateFeeRate = admin.properties.get(i).getLateFee();
+                    double lateFeeRate = admin.properties.get(i).getLateFeeRate();
                     admin.properties.get(i).showLastRecord().setRentalFee(feeRate);
                     admin.properties.get(i).showLastRecord().setLateFee(lateFeeRate);
                     System.out.println("RENTAL RECORD");
