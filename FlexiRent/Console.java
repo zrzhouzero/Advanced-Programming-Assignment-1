@@ -220,7 +220,7 @@ public class Console {
                     DateTime rtnDate = currentTimeConvert(rtDate);
                     admin.properties.get(i).showLastRecord().setRtnDate(rtnDate);
                     double feeRate = admin.properties.get(i).getDailyRental();
-                    double lateFeeRate = admin.properties.get(i).getLateFeeRate();
+                    double lateFeeRate = admin.properties.get(i).getLateFee();
                     admin.properties.get(i).showLastRecord().setRentalFee(feeRate);
                     admin.properties.get(i).showLastRecord().setLateFee(lateFeeRate);
                     System.out.println("RENTAL RECORD");
